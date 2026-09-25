@@ -5,6 +5,7 @@ const apiBase = (import.meta.env.VITE_API_URL as string) ?? "http://localhost:50
 const http = axios.create({
   baseURL: apiBase,
   headers: { Accept: "application/json" },
+  timeout: 30000,
 });
 
 export type JobStatus = "Pending" | "Running" | "Completed" | "Failed";
